@@ -1,0 +1,62 @@
+[
+  {
+    "name": "NEFENTUS — Crypto Invoicing",
+    "desc": "Landing and product UX for seamless crypto invoicing: wallet selection (e.g. MetaMask), multi-currency checkout, VAT, and gas-aware totals—positioned for businesses moving to digital assets.",
+    "image": "nefentus",
+    "category": "blockchain",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Betpanda — Web3 Gaming Platform",
+    "desc": "Dark-mode, high-conversion UI with multi-asset support (30+ cryptocurrencies), deposit flows, live countdowns, and trust integrations—representative of complex real-time frontend and Web3 payment surfaces.",
+    "image": "betpanda",
+    "category": "blockchain",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Talkie.ai — Healthcare AI Agents",
+    "desc": "SaaS marketing site for voice/SMS front-desk AI: patient scheduling dialogue, HIPAA and SOC positioning, and impact metrics—aligned with production AI systems and regulated-industry requirements.",
+    "image": "talkie-ai",
+    "category": "ai",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Betpanda — Campaigns & Live Ops",
+    "desc": "Hero, sponsorship, and engagement modules with carousel onboarding, social proof, weekly raffle timers, and leaderboard-style tables—showing component depth and stateful promotional experiences at scale.",
+    "image": "betpanda-campaigns",
+    "category": "blockchain",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Prism — Web3 Card Experience",
+    "desc": "DeFi-style landing: gradient hero, trust stats, and product visualization for crypto-linked spending—modern Next/React-quality layout, typography, and CTA patterns typical of fintech and blockchain brands.",
+    "image": "prism",
+    "category": "blockchain",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Developer Portfolio",
+    "desc": "This site—static-first portfolio showcasing blockchain, AI, and full-stack work with fast navigation and EmailJS-ready contact.",
+    "image": "composey",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]

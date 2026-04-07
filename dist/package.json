@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daishi Kaito — static portfolio (HTML/CSS/JS)",
+  "scripts": {
+    "start": "serve . -l 5173",
+    "dev": "serve . -l 5173",
+    "build": "node scripts/build.mjs",
+    "preview": "serve dist -l 4173"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
