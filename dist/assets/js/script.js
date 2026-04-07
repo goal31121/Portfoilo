@@ -44,29 +44,40 @@ $(document).ready(function () {
     });
 
     // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
+    $('a[href^="#"]').on('click', function (e) {
+        const target = $(this).attr('href');
+        if (!target || target === "#") return;
+        const $el = $(target);
+        if ($el.length === 0) return;
         e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+        $('html, body').animate({ scrollTop: $el.offset().top }, 500, 'linear');
     });
 
-    // <!-- emailjs: replace init key and service/template IDs with your EmailJS project -->
+    // Contact form: mailto fallback (no API keys / secrets required).
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
         event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const name = String(formData.get("name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const phone = String(formData.get("phone") || "").trim();
+        const message = String(formData.get("message") || "").trim();
+
+        const to = "everestgreen.03107@gmail.com";
+        const subject = encodeURIComponent(`Portfolio inquiry from ${name || "someone"}`);
+        const body = encodeURIComponent(
+            [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                phone ? `Phone: ${phone}` : null,
+                "",
+                message,
+            ].filter(Boolean).join("\n")
+        );
+
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        form.reset();
     });
-    // <!-- emailjs to mail contact form data -->
 
     syncHeaderOverHero();
 
@@ -106,7 +117,7 @@ document.addEventListener('visibilitychange',
 async function fetchData(type = "skills") {
     let response
     type === "skills" ?
-        response = await fetch("skills.json")
+        response = await fetch("./skills.json")
         :
         response = await fetch("./projects/projects.json")
     const data = await response.json();
@@ -115,12 +126,12 @@ async function fetchData(type = "skills") {
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = ;
+    let skillHTML = "";
     skills.forEach(skill => {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src="${skill.icon}" alt="${skill.name}" loading="lazy" />
                 <span>${skill.name}</span>
               </div>
             </div>`
@@ -130,17 +141,23 @@ function showSkills(skills) {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = ;
+    let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+        const view = project?.links?.view || "#";
+        const code = project?.links?.code || "#";
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
         </div>
         <div class="desc">
           <p>${project.desc}</p>
+          <div class="btns">
+            <a class="btn" href="${view}" target="_blank" rel="noopener noreferrer">View</a>
+            <a class="btn" href="${code}" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
         </div>
       </div>
     </div>`
@@ -190,25 +207,6 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 // }
 // window.onload = fadeOut;
 // pre loader end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({

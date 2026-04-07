@@ -21,11 +21,11 @@ document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Projects | Daishi Kaito";
-            $("#favicon").attr("href", "/assets/images/favicon.png");
+            $("#favicon").attr("href", "../assets/images/favicon.png");
         }
         else {
             document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "/assets/images/favhand.png");
+            $("#favicon").attr("href", "../assets/images/favhand.png");
         }
     });
 
@@ -42,18 +42,24 @@ function getProjects() {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
-    let projectsHTML = ;
+    let projectsHTML = "";
     projects.forEach(project => {
+        const view = project?.links?.view || "#";
+        const code = project?.links?.code || "#";
         projectsHTML += `
         <div class="grid-item ${project.category}">
         <div class="box tilt" style="width: 380px; margin: 1rem">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="../assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
         </div>
         <div class="desc">
           <p>${project.desc}</p>
+          <div class="btns">
+            <a class="btn" href="${view}" target="_blank" rel="noopener noreferrer">View</a>
+            <a class="btn" href="${code}" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
         </div>
       </div>
     </div>
@@ -100,22 +106,3 @@ getProjects().then(data => {
     showProjects(data);
 })
 // fetch projects end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
