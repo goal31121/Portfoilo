@@ -143,43 +143,29 @@ function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        const view = project?.links?.view || "#";
-        const code = project?.links?.code || "#";
         projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a class="btn" href="${view}" target="_blank" rel="noopener noreferrer">View</a>
-            <a class="btn" href="${code}" target="_blank" rel="noopener noreferrer">Code</a>
+        <div class="box">
+          <div class="image-wrapper">
+            <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
           </div>
-        </div>
-      </div>
-    </div>`
+          <div class="content">
+            <h3>${project.name}</h3>
+            <p>${project.desc}</p>
+          </div>
+        </div>`
     });
     projectsContainer.innerHTML = projectHTML;
 
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
     /* ===== SCROLL REVEAL ANIMATION ===== */
     const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
+        origin: 'bottom',
+        distance: '60px',
+        duration: 800,
+        reset: false
     });
 
     /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
+    srtop.reveal('.work .box', { interval: 150 });
 
 }
 
