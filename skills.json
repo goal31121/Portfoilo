@@ -20,36 +20,8 @@
         "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
     },
     {
-        "name": "HTML5",
-        "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
-    },
-    {
-        "name": "CSS3",
-        "icon": "https://img.icons8.com/color/48/000000/css3.png"
-    },
-    {
-        "name": "Bootstrap",
-        "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
-    },
-    {
-        "name": "Sass",
-        "icon": "https://img.icons8.com/color/48/000000/sass.png"
-    },
-    {
-        "name": "Material UI",
-        "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
-    },
-    {
-        "name": "Chakra UI",
-        "icon": "https://img.icons8.com/color/48/000000/chakra-ui.png"
-    },
-    {
         "name": "Redux",
         "icon": "https://img.icons8.com/color/48/000000/redux.png"
-    },
-    {
-        "name": "jQuery",
-        "icon": "https://img.icons8.com/ios-filled/48/1169ae/jquery.png"
     },
     {
         "name": "Express.js",
@@ -74,10 +46,6 @@
     {
         "name": "Kotlin",
         "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
-    },
-    {
-        "name": "PHP",
-        "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
     },
     {
         "name": "REST APIs",
@@ -112,10 +80,6 @@
         "icon": "https://img.icons8.com/ios-filled/48/0080FF/digitalocean.png"
     },
     {
-        "name": "Vercel",
-        "icon": "https://img.icons8.com/color/48/vercel.png"
-    },
-    {
         "name": "Docker",
         "icon": "https://img.icons8.com/color/48/docker.png"
     },
@@ -124,16 +88,8 @@
         "icon": "https://img.icons8.com/color/48/000000/github.png"
     },
     {
-        "name": "Git",
-        "icon": "https://img.icons8.com/color/48/000000/git.png"
-    },
-    {
         "name": "GitHub",
         "icon": "https://img.icons8.com/color/48/000000/github.png"
-    },
-    {
-        "name": "WordPress",
-        "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
     },
     {
         "name": "Android",

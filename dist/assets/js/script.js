@@ -86,7 +86,7 @@ $(document).ready(function () {
     if (typeof Typed !== "undefined" && typingEl) {
         new Typed(typingEl, {
             strings: [
-                "Web3 & smart contracts",
+                "Web3 & smart contracts &nbsp&nbsp",
                 "AI-driven production workflows",
                 "C++ & high-performance backends",
                 "AWS & reliable operations",
@@ -247,4 +247,4 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });
+srtop.reveal('.contact .container .form-group', { delay: 400 });``

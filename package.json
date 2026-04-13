@@ -7,7 +7,7 @@
     "start": "serve . -l 5173",
     "dev": "serve . -l 5173",
     "build": "node scripts/build.mjs",
-    "preview": "serve dist -l 4173"
+    "preview": "serve dist -l 4173 2023"
   },
   "devDependencies": {
     "serve": "^14.2.4"
